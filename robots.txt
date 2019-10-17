@@ -1,2 +1,2 @@
 ﻿User-agent: *
-Sitemap: http://mebelnazakaztambov.itsinsta.site/sitemap.xml
+Sitemap: https://mebelnazakaztambov.itsinsta.site/sitemap.xml
