@@ -9,8 +9,8 @@
     <script async src="https://use.fontawesome.com/d758daec41.js"></script>   
 	<link rel="stylesheet" href="css/style.css"/>
     
-    <meta name="description" content="мебель там бов дизайн шкафы на заказтамбов а подслушано в тамбове бо всегодня бове">
-    <meta name="keywords" content="мебель там бов дизайн шкафы на заказтамбов а подслушано в тамбове бо всегодня бове" />
+    <meta name="description" content="мебель там бов дизайн шкафы а на заказтамбов подслушано в тамбове бо всегодня бове">
+    <meta name="keywords" content="мебель там бов дизайн шкафы а на заказтамбов подслушано в тамбове бо всегодня бове" />
     
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
@@ -39,7 +39,7 @@
     <meta property="og:image:width" content="150"/>
     <meta property="og:image:height" content="150"/>
     <meta property="og:title" content="Мебель на заказ Тамбов" />
-    <meta property="og:description" content="мебель там бов дизайн шкафы на заказтамбов а подслушано в тамбове бо всегодня бове" />
+    <meta property="og:description" content="мебель там бов дизайн шкафы а на заказтамбов подслушано в тамбове бо всегодня бове" />
     <meta property="og:locale" content="Ru-ru" />
     <meta property="og:site_name" content="mebelnazakaztambov" />
 
@@ -111,18 +111,18 @@
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="stories__slide" title="мебель на заказтамбов">
-									<a href="./tags/./mebel--na-zakaztambov.html">
-										<div class="stories__slide-pic" style="background-image: url(./img/og/mebel--na-zakaztambov.png);"></div>
-										<div class="stories__slide-txt" style="">мебель на заказтамбов</div>
-									</a>
-								</div>
-							</div>
-							<div class="swiper-slide">
 								<div class="stories__slide" title="а мебель">
 									<a href="./tags/./a-mebel-.html">
 										<div class="stories__slide-pic" style="background-image: url(./img/og/a-mebel-.png);"></div>
 										<div class="stories__slide-txt" style="">а мебель</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="мебель на заказтамбов">
+									<a href="./tags/./mebel--na-zakaztambov.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/mebel--na-zakaztambov.png);"></div>
+										<div class="stories__slide-txt" style="">мебель на заказтамбов</div>
 									</a>
 								</div>
 							</div>
@@ -468,6 +468,17 @@ $(document).ready(function(){
                 contentType: 'application/json',
 		data : form_data
 	}).done(function(response){
+	    var email = response.email;
+		if (email) {
+	        $("#leadSent").text("Ваш запрос отправлен на " + email);
+		} else {
+	        $("#leadSent").text("Ваш запрос отправлен");
+		}
+
+		var input = form.find('input');
+		input.attr('readonly', true);
+        input.attr("disabled", true);
+		form.find('button').attr("disabled", true);
 	}).fail(function(){
 	});
 
